@@ -13,7 +13,7 @@ spring:
         type: single # ??? vs ???
 
 server:
-  port: 8082
+  port: 8083
 ---
 spring:
   config:
