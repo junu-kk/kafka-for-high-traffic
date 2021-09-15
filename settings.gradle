@@ -1,3 +1,0 @@
-rootProject.name = 'kafka-for-high-traffic'
-include 'from-kafka-to-es'
-include 'from-web-to-kafka'

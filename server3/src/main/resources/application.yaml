@@ -1,0 +1,43 @@
+spring:
+  config:
+    activate:
+      on-profile: local
+
+  kafka:
+    consumer:
+      bootstrap-servers: 54.180.171.233:9092
+      key-deserializer: org.apache.kafka.common.serialization.StringDeserializer
+      value-deserializer: org.apache.kafka.common.serialization.StringDeserializer
+      listener:
+        ack-mode: manual_immediate # ???? ?????.
+        type: single # ??? vs ???
+
+server:
+  port: 8082
+---
+spring:
+  config:
+    activate:
+      on-profile: dev
+
+  kafka:
+    consumer:
+      bootstrap-servers: 54.180.171.233:9092
+      key-deserializer: org.apache.kafka.common.serialization.StringDeserializer
+      value-deserializer: org.apache.kafka.common.serialization.StringDeserializer
+      listener:
+        ack-mode: manual_immediate # ???? ?????.
+        type: single # ??? vs ???
+
+
+logging:
+  pattern:
+    file: "[%d{HH:mm:ss.SSS}][%-5level][%logger.%method:line%line] - %msg%n"
+  level:
+    org:
+      springframework: info
+
+  logback:
+    rollingpolicy:
+      file-name-pattern: "~/logs/abc.%d{yyyy-MM-dd}.%i"
+      max-history: 30
