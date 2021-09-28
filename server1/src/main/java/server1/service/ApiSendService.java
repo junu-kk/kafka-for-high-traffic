@@ -10,15 +10,8 @@ import server1.VO;
 import java.text.SimpleDateFormat;
 import java.util.Date;
 
-@Service
 @Slf4j
 public class ApiSendService implements SendService {
-
-    @Override
-    public SendServiceType getType() {
-        return SendServiceType.API;
-    }
-
     @Override
     public void sendMsg(String msg) {
         SimpleDateFormat sdf = new SimpleDateFormat("yyyy-MM-dd'T'HH:mm:ss.SSSZZ");

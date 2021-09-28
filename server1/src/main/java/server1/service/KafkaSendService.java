@@ -24,11 +24,6 @@ public class KafkaSendService implements SendService {
     }
 
     @Override
-    public SendServiceType getType() {
-        return SendServiceType.KAFKA;
-    }
-
-    @Override
     public void sendMsg(String msg) {
         SimpleDateFormat sdf = new SimpleDateFormat("yyyy-MM-dd'T'HH:mm:ss.SSSZZ");
         Date now = new Date();
