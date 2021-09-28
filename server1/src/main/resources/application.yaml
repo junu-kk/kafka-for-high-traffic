@@ -8,30 +8,13 @@ spring:
       bootstrap-servers: 54.180.171.233:9092
       key-serializer: org.apache.kafka.common.serialization.StringSerializer
       value-serializer: org.apache.kafka.common.serialization.StringSerializer
+      properties:
+        enable.idempotence: true
 
 server:
   port: 8081
----
-spring:
-  config:
-    activate:
-      on-profile: dev
-
-  kafka:
-    producer:
-      bootstrap-servers: 54.180.171.233:9092
-      key-serializer: org.apache.kafka.common.serialization.StringSerializer
-      value-serializer: org.apache.kafka.common.serialization.StringSerializer
-
 
 logging:
-  pattern:
-    file: "[%d{HH:mm:ss.SSS}][%-5level][%logger.%method:line%line] - %msg%n"
-  level:
-    org:
-      springframework: info
-
-  logback:
-    rollingpolicy:
-      file-name-pattern: "~/logs/abc.%d{yyyy-MM-dd}.%i"
-      max-history: 30
+  file:
+    name: server1.log
+    path: .
